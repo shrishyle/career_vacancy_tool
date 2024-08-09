@@ -1,4 +1,8 @@
-let list = [
+import {save, retrievedData} from "./API/api"
+
+let retrivedList = retrievedData();
+
+let readyList = [
   {
     "Regulator Body": [],
     "Central PSU": [],
@@ -6,5 +10,13 @@ let list = [
     "Autonomous Body": [],
   },
 ];
+
+let list;
+
+if (retrivedList) {
+  list = retrivedList;
+} else {
+  list = readyList;
+}
 
 export default list;

@@ -1,6 +1,5 @@
 import React from "react";
 import list from "../database";
-import { save, retrievedData } from "../API/api";
 
 const Display_List = ({ list_type }) => {
   function handleTitleClick(e) {
@@ -17,7 +16,7 @@ const Display_List = ({ list_type }) => {
     }
   }
 
-  let display;
+
   let listDisplay = list[0][list_type].map((item) => (
     <li key={item[1]}>
       <a href={item[1]} target="_blank">
@@ -25,8 +24,7 @@ const Display_List = ({ list_type }) => {
       </a>
     </li>
   ));
-  let rdata = retrievedData();
-  console.log(rdata);
+
 
   return (
     <div className="display_list">
